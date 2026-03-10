@@ -1,5 +1,7 @@
 export class CreateCommentDto {
-    userId: number;
-    gameId: number;
     content: string;
+    createdAt: Date;
+    user_Id: number;
+    game_Id: number;
 }
+

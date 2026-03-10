@@ -7,6 +7,9 @@ import { AppService } from './app.service';
 import { CatModule } from './cats/cat.module';
 import { AuthModule } from './auth/auth.module';
 import { GamesModule } from './games/games.module';
+import { ParticipantModule } from './games/participant/participant.module';
+import { SessionModule } from './games/session/session.module';
+import { CommentModule } from './games/comment/comment.module';
 
 type SupportedDbTypes = 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mongodb' | 'oracle';
 @Module({
@@ -28,7 +31,7 @@ type SupportedDbTypes = 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mongodb' 
                 synchronize: configService.get<boolean>('DB_SYNCHRONIZE') ?? false,
             }),
         }),
-        GamesModule,
+        GamesModule, CommentModule , ParticipantModule, SessionModule
     ],
     controllers: [AppController],
     providers: [AppService],
